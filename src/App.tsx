@@ -146,22 +146,6 @@ export default function App() {
     setStatus(null)
   }
 
-  const active = CATEGORIES.find((c) => c.id === activeCategory) ?? CATEGORIES[0]
-
-  const knownOptions: OptionMeta[] = useMemo(() => {
-    if (!doc) return []
-    const section = doc[active.section] || {}
-    return Object.keys(section)
-      .map((key) => metaFor(active.section, key))
-      .filter((m): m is OptionMeta => Boolean(m))
-  }, [doc, active.section])
-
-  const unknownKeys = useMemo(() => {
-    if (!doc) return [] as string[]
-    const section = doc[active.section] || {}
-    return Object.keys(section).filter((key) => !metaFor(active.section, key))
-  }, [doc, active.section])
-
   const presentCategories = useMemo(() => {
     if (!doc) return CATEGORIES
     const known = CATEGORIES.filter((c) => Boolean(doc[c.section]))
@@ -176,6 +160,25 @@ export default function App() {
       }))
     return [...known, ...extras]
   }, [doc])
+
+  // look up in presentCategories so extra-* sections resolve, and fall back to
+  // the first section actually in the file rather than an empty Display page
+  const active =
+    presentCategories.find((c) => c.id === activeCategory) ?? presentCategories[0] ?? CATEGORIES[0]
+
+  const knownOptions: OptionMeta[] = useMemo(() => {
+    if (!doc) return []
+    const section = doc[active.section] || {}
+    return Object.keys(section)
+      .map((key) => metaFor(active.section, key))
+      .filter((m): m is OptionMeta => Boolean(m))
+  }, [doc, active.section])
+
+  const unknownKeys = useMemo(() => {
+    if (!doc) return [] as string[]
+    const section = doc[active.section] || {}
+    return Object.keys(section).filter((key) => !metaFor(active.section, key))
+  }, [doc, active.section])
 
   if (!session || !doc) {
     return (
@@ -194,7 +197,7 @@ export default function App() {
       clientName={session.client.shortName}
       filePath={session.path}
       categories={presentCategories}
-      activeCategory={activeCategory}
+      activeCategory={active.id}
       onCategoryChange={setActiveCategory}
       dirty={dirty}
       readOnly={readOnly}
