@@ -41,7 +41,8 @@
       "target": [
         "nsis",
         "portable"
-      ]
+      ],
+      "signAndEditExecutable": false
     }
   },
   "allowScripts": {

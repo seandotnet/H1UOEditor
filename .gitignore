@@ -20,6 +20,3 @@ Thumbs.db
 # env / secrets
 .env
 .env.*
-
-# local design reference — keep out of the repo
-aether-call-to-action-DESIGN.md
