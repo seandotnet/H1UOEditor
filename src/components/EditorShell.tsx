@@ -132,7 +132,7 @@ export function EditorShell(props: Props) {
           {unknownKeys.length > 0 && (
             <div className="shell__unknown">
               <h2>Other keys in [{sectionName}]</h2>
-              <p>Unrecognized options — still fully editable.</p>
+              <p>Unrecognized options. Still editable.</p>
               {unknownKeys.map((key) => (
                 <OptionField
                   key={key}
@@ -140,7 +140,7 @@ export function EditorShell(props: Props) {
                     section: sectionName,
                     key,
                     label: key,
-                    description: 'Custom / unmapped option from your UserOptions.ini.',
+                    description: 'Key from your UserOptions.ini with no built-in label yet.',
                     control: { kind: 'text' },
                   }}
                   value={sectionValues[key] ?? ''}

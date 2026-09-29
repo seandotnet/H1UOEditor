@@ -1,27 +1,23 @@
 # H1UO Editor
 
-Modern desktop editor for H1Z1 `UserOptions.ini` files.
+Windows desktop app for editing H1Z1 `UserOptions.ini` files.
 
-Built for two common clients:
+Supports:
 
-- **ROTK** — `C:\Games\ROTK\UserOptions.ini`
-- **ZEmu** — `C:\Program Files (x86)\Steam\steamapps\content\app_433850\depot_433851\UserOptions.ini`
+- **ROTK**: `C:\Games\ROTK\UserOptions.ini`
+- **ZEmu**: `C:\Program Files (x86)\Steam\steamapps\content\app_433850\depot_433851\UserOptions.ini`
+- Any other `UserOptions.ini` via browse
 
-You can also browse to any other `UserOptions.ini`.
+## Why bother
 
-## Why UserOptions matter
-
-H1Z1 exposes a lot of graphics, audio, input, and HUD behaviour through `UserOptions.ini`. Many competitive and performance tweaks (render scale, shadows, particle LOD, FOV, input lag) are clearer here than in the in-game menus — and the game will often rewrite the file on exit unless you mark it **read-only**.
-
-H1UO Editor makes those keys readable, grouped by category, and safe to edit with backup + read-only lock support.
+A lot of useful settings are only in `UserOptions.ini` (render scale, shadows, particle LOD, FOV, input lag, etc). The in-game menus don't expose everything, and the game can overwrite your file on exit unless it's marked read-only.
 
 ## Features
 
-- Client picker for ROTK / ZEmu (plus custom path)
-- Categorized settings with plain-English labels and tips
-- Toggles, sliders, selects, and raw key editing for unknown options
+- Pick ROTK or ZEmu (or browse to a custom path)
+- Settings grouped by category with labels and short descriptions
+- Toggles, sliders, dropdowns, and raw editing for unknown keys
 - Save, reload, backup, and read-only lock
-- Dark Aether-inspired UI
 
 ## Develop
 
@@ -30,14 +26,12 @@ npm install
 npm run dev
 ```
 
-## Build
+This launches the Electron desktop app.
 
-```bash
-npm run build
-```
-
-Windows installers land under `release/` when using:
+## Build installer
 
 ```bash
 npm run electron:build
 ```
+
+Output goes to `release/`.

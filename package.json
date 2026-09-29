@@ -1,7 +1,7 @@
 {
   "name": "h1uo-editor",
   "version": "0.1.0",
-  "description": "Modern UserOptions.ini editor for H1Z1 clients (ROTK & ZEmu)",
+  "description": "Desktop UserOptions.ini editor for H1Z1 clients (ROTK & ZEmu)",
   "main": "dist-electron/main.js",
   "author": "seandotnet",
   "license": "MIT",

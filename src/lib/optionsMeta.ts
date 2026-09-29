@@ -90,20 +90,20 @@ export const CATEGORIES: CategoryMeta[] = [
 const quality0to3 = {
   kind: 'select' as const,
   options: [
-    { value: '0', label: '0 — Ultra' },
-    { value: '1', label: '1 — High' },
-    { value: '2', label: '2 — Medium' },
-    { value: '3', label: '3 — Low' },
+    { value: '0', label: '0 - Ultra' },
+    { value: '1', label: '1 - High' },
+    { value: '2', label: '2 - Medium' },
+    { value: '3', label: '3 - Low' },
   ],
 }
 
 const quality0to3Normal = {
   kind: 'select' as const,
   options: [
-    { value: '0', label: '0 — Off / Low' },
-    { value: '1', label: '1 — Medium' },
-    { value: '2', label: '2 — High' },
-    { value: '3', label: '3 — Ultra' },
+    { value: '0', label: '0 - Off / Low' },
+    { value: '1', label: '1 - Medium' },
+    { value: '2', label: '2 - High' },
+    { value: '3', label: '3 - Ultra' },
   ],
 }
 
@@ -175,7 +175,7 @@ export const OPTION_META: OptionMeta[] = [
     description:
       'Internal render resolution multiplier. Lower = more FPS, softer image. Stay above ~0.6.',
     control: { kind: 'slider', min: 0.5, max: 1.5, step: 0.05 },
-    tip: '1.0 is native. Competitive players often use 0.8–1.0.',
+    tip: '1.0 is native. Values around 0.8-1.0 are common for fps.',
   },
   {
     section: 'Display',
@@ -206,7 +206,7 @@ export const OPTION_META: OptionMeta[] = [
     label: 'Effects Quality',
     description: 'Visual effects fidelity. Higher helps bullet impacts stay visible.',
     control: quality0to3Normal,
-    tip: '2 is a common competitive sweet spot for seeing hits.',
+    tip: '2 helps with seeing bullet impacts without going full ultra.',
   },
   {
     section: 'Rendering',
@@ -245,9 +245,9 @@ export const OPTION_META: OptionMeta[] = [
     control: {
       kind: 'select',
       options: [
-        { value: '0', label: '0 — Off / Low' },
-        { value: '1', label: '1 — Medium' },
-        { value: '2', label: '2 — Ultra' },
+        { value: '0', label: '0 - Off / Low' },
+        { value: '1', label: '1 - Medium' },
+        { value: '2', label: '2 - Ultra' },
       ],
     },
   },
@@ -259,10 +259,10 @@ export const OPTION_META: OptionMeta[] = [
     control: {
       kind: 'select',
       options: [
-        { value: '0', label: '0 — Low' },
-        { value: '1', label: '1 — Medium' },
-        { value: '2', label: '2 — High' },
-        { value: '3', label: '3 — Ultra' },
+        { value: '0', label: '0 - Low' },
+        { value: '1', label: '1 - Medium' },
+        { value: '2', label: '2 - High' },
+        { value: '3', label: '3 - Ultra' },
       ],
     },
     tip: '2 pairs well with EffectsQuality for long-range hit feedback.',
@@ -864,7 +864,7 @@ export const OPTION_META: OptionMeta[] = [
     section: 'General',
     key: 'ReduceInputLag',
     label: 'Reduce Input Lag',
-    description: 'Input latency reduction mode (0–2 depending on client).',
+    description: 'Input latency reduction mode (0-2 depending on client).',
     control: { kind: 'number', min: 0, max: 2, step: 1 },
   },
   {

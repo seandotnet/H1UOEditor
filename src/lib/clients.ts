@@ -20,7 +20,7 @@ export const CLIENTS: ClientDefinition[] = [
     id: 'zemu',
     name: 'ZEmu',
     shortName: 'ZEmu',
-    description: 'Steam depot / ZEmu client UserOptions',
+    description: 'Steam depot UserOptions path',
     defaultPath:
       'C:\\Program Files (x86)\\Steam\\steamapps\\content\\app_433850\\depot_433851\\UserOptions.ini',
   },

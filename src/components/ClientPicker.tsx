@@ -19,13 +19,13 @@ export function ClientPicker({ availability, loading, error, onPick, onBrowse }:
       <main className="picker__content">
         <p className="picker__label">H1UO EDITOR</p>
         <h1 className="picker__title">
-          Edit your UserOptions
+          UserOptions
           <br />
-          without the guesswork.
+          editor
         </h1>
         <p className="picker__subtitle">
-          Pick a client, tweak every setting with clear labels, and save a read-only lock so the game
-          cannot overwrite your config.
+          Choose which client to edit. Settings are grouped and labeled so you don't have to dig
+          through the raw .ini.
         </p>
 
         <div className="picker__actions">
