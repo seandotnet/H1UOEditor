@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+dist-electron/
+release/
+*.local
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / os
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# env / secrets
+.env
+.env.*
+
+# local design reference — keep out of the repo
+aether-call-to-action-DESIGN.md

@@ -1,0 +1,136 @@
+.field {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.8fr);
+  gap: 20px;
+  align-items: center;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-card);
+  background: rgba(244, 244, 245, 0.03);
+  animation: rise 0.4s ease both;
+}
+
+.field__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.field__title-row h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.field__title-row code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.field__copy p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.field__tip {
+  color: #d4d4d8 !important;
+}
+
+.field__control {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.field__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 92px;
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--text-secondary);
+}
+
+.field__toggle.is-on {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.field__toggle-knob {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #52525b;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.field__toggle.is-on .field__toggle-knob {
+  transform: translateX(28px);
+  background: #fff;
+}
+
+.field__toggle-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 28px;
+}
+
+.field select,
+.field__number,
+.field__text {
+  width: 100%;
+  max-width: 260px;
+  padding: 10px 12px;
+  border-radius: var(--radius-control);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #0a0a0b;
+  color: #fff;
+}
+
+.field__slider {
+  display: grid;
+  grid-template-columns: 1fr 88px;
+  gap: 10px;
+  width: 100%;
+  max-width: 280px;
+  align-items: center;
+}
+
+.field__slider input[type='range'] {
+  width: 100%;
+  accent-color: #fff;
+}
+
+.field__color {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  max-width: 260px;
+}
+
+.field__color input[type='color'] {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-control);
+  background: transparent;
+}
+
+@media (max-width: 800px) {
+  .field {
+    grid-template-columns: 1fr;
+  }
+
+  .field__control {
+    justify-content: stretch;
+  }
+}
